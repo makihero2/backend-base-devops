@@ -39,15 +39,14 @@ describe("Test Suite App", () => {
             });
     });
 
-    // Prueba para el endpoint "/primo"
     test("endpoint /primo", async () => {
-        const numero = 7;
+        const numero = 5;
         return await request(app)
-            .get(`/primo?numero=${numero}`)
-            .expect("Content-Type", /text/)
+            .get(`/primo/${numero}`)
+            .expect("Content-Type", /text\/html/)
             .expect(200)
             .then((response) => {
-                expect(response.text).toBe(`El número ${numero} es primo`);
+                expect(response.text).toBe(`Hola, el numero ingresado es un numero primo`);
             });
     });
 

@@ -42,4 +42,5 @@ describe('Pruebas para esPalindromo', () => {
         expect(esPalindromo('aaaaaaa')).toBe(true);
     });
 
+
 });

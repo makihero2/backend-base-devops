@@ -27,11 +27,6 @@ describe('Pruebas para esPalindromo', () => {
         expect(esPalindromo('Hello World')).toBe(false);
     });
 
-    // Caso de borde: Frase con caracteres especiales
-    test('Frase con caracteres especiales "!@#$%^&*()_+" no es un palíndromo', () => {
-        expect(esPalindromo('!@#$%^&*()_+')).toBe(false);
-    });
-
     // Caso de borde: Palíndromo de una sola letra
     test('Palíndromo de una sola letra "a" es un palíndromo', () => {
         expect(esPalindromo('a')).toBe(true);

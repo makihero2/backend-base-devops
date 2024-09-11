@@ -4,6 +4,14 @@ pipeline {
         USERNAME = 'JHD'
     } 
     stages {
+        stage('Debug') {
+    steps {
+        script {
+            echo "USERNAME: ${env.USERNAME}"
+            echo "API_KEY: ${env.API_KEY}"
+        }
+    }
+}
         stage('Build and test') {
             agent {
                 docker {

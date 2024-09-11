@@ -28,15 +28,14 @@ describe("Test Suite App", () => {
             });
     });
 
-    // Prueba para el endpoint "/palindromo" 
     test("endpoint /palindromo", async () => {
-        const palabra = "reconocer";
+        const palabra = "madam";
         return await request(app)
-            .get(`/palindromo?palabra=${palabra}`)
-            .expect("Content-Type", /text/)
+            .get(`/palindromo/${palabra}`)
+            .expect("Content-Type", /text\/html/)
             .expect(200)
             .then((response) => {
-                expect(response.text).toBe(`La palabra ${palabra} es un palíndromo`);
+                expect(response.text).toBe(`Hola, La frase ingresada es palindromo`);
             });
     });
 

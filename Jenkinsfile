@@ -1,34 +1,33 @@
 pipeline {
     agent any
-    environmet{
-        USERNAME=JHD
-    } 
+    environment {
+        USERNAME = 'JHD'
+    }
     stages {
-        stage('Build and test'){
+        stage('Build and Test') {
             agent {
                 docker {
                     image 'node:20.11.1-alpine3.19'
                     reuseNode true
                 }
             }
-            stages{
-                stage ('Instalar dependencias'){
-                    steps{
+            steps {
+                stage('Instalar dependencias') {
+                    steps {
                         sh 'npm install'
                     }
                 }
-                stage ('ejecucion de test'){
+                stage('Ejecución de test') {
                     steps {
                         sh 'npm run test'
                     }
                 }
-                stage ('ejecucion de build'){
-                    steps{
+                stage('Ejecución de build') {
+                    steps {
                         sh 'npm run build'
                     }
                 }
             }
-                
         }
     }
 }

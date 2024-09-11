@@ -15,7 +15,7 @@ app.get("/key", (req, res) => {
   if (configuration.apiKey) {
     res.json({ message: `Hola, esta api contiene la siguiente api-key: ${configuration.apiKey}` });
   } else {
-    res.status(500).json({ error: "API key no configurada" });
+   // res.status(500).json({ error: "API key no configurada" });
   }
 });
 
@@ -23,7 +23,7 @@ app.get("/key", (req, res) => {
 app.get("/palindromo/:frase", (req, res) => {
   const { frase } = req.params;
   if (frase === undefined || frase.trim() === "") {
-    return res.status(400).send("Frase no proporcionada o vacía");
+    //return res.status(400).send("Frase no proporcionada o vacía");
   }
   const esPalindromoResult = esPalindromo(frase);
   res.send(`Hola, La frase ingresada "${frase}" ${esPalindromoResult ? "es" : "no es"} un palíndromo`);
@@ -34,7 +34,7 @@ app.get("/primo/:numero", (req, res) => {
   const num = parseInt(numero, 10);
 
   if (isNaN(num)) {
-    return res.status(400).send("Número no válido");
+   // return res.status(400).send("Número no válido");
   }
 
   const esPrimoResult = esPrimo(num);

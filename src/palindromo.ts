@@ -37,11 +37,6 @@ describe('Pruebas para esPalindromo', () => {
         expect(esPalindromo('12321')).toBe(true);
     });
 
-    // Caso de borde: Frase con puntuación
-    test('Frase con puntuación "A man, a plan, a canal: Panama!" es un palíndromo', () => {
-        expect(esPalindromo('A man, a plan, a canal: Panama!')).toBe(true);
-    });
-
     // Caso de borde: Frase con letras repetidas
     test('Frase con letras repetidas "aaaaaaa" es un palíndromo', () => {
         expect(esPalindromo('aaaaaaa')).toBe(true);

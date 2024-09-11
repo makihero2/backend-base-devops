@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environmet{
+        USERNAME=JHD
+    } 
     stages {
         stage('Build and test'){
             agent {

@@ -13,11 +13,12 @@ app.get("/", (req, res) => {
 
 app.get("/key", (req, res) => {
   if (configuration.apiKey) {
-    res.send(`Hola, esta api contiene la siguiente api-key: ${configuration.apiKey}`);
+    res.json({ message: `Hola, esta api contiene la siguiente api-key: ${configuration.apiKey}` });
   } else {
-    res.status(500).send("API key no configurada");
+    res.status(500).json({ error: "API key no configurada" });
   }
 });
+
 
 app.get("/palindromo/:frase", (req, res) => {
   const { frase } = req.params;
